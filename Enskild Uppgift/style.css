@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+
+* {
+    margin:0px;
+    padding:0px;
+    font-family:'Koulen';
+}
+
+body {
+    min-height: 400vh;
+}
+
+/* definierar bakgrundens bildfil såväl som dess storlek för att göra sidan scrollbar */
+
+.background {
+    width: auto;
+    height: 400vh;
+    background-image: url(https://i.imgur.com/d2DXLDL.jpeg);
+    background-size: cover;
+    background-position: center;
+    position: static;
+    z-index: -10;
+}
+
+/* tar bort scrollbaren för estetiska syften */
+
+body::-webkit-scrollbar {
+    display: none;
+    scroll-behavior: smooth;
+}
+
+/* omfamnar dess child-element för att de ska placeras inom sig, vilket gör det lättare att organisera var elementen placeras */
+
+.main {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    position: fixed;
+}
+
+/* justerar storlek och position av column1 diven */
+
+.main .column1 {
+	display: flex;
+	flex-direction: column;
+    width: 36.8%;
+	align-items: center;
+	justify-content: center;
+    margin-left: 6.5%;
+	flex: 86;
+    text-align: justify;
+    text-align-last: center;
+}
+
+/* gör h1 element fina */
+
+h1 {
+	font-size: 45px;
+	color: #61bb75;
+	padding-bottom: 1em;
+    -webkit-text-stroke: 1px rgb(48, 48, 51);
+    text-shadow: -2px 2px 0px #fff;
+}
+
+/* stylar h3 elementen på sidan */
+
+.main .column1 h3 {
+    font-size: 30px;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.main .column1 p,h3 {
+	color: #fff;
+    font-size: 20px;
+	line-height: 24px;
+    padding-top: 1rem;
+	padding-bottom: 1rem;
+    -webkit-text-stroke: 0.2px rgb(48, 48, 51);
+    text-shadow: -0.5px 0.5px 0px #61bb75;
+}
+
+/* flyttar ned innehållet i den mörka lådan så de är något centrerade */
+
+.column1 {
+    margin-top: 10%;
+}
+
+/* stylar menyknappen till en lagom storlek och flyttar den till en lämplig plats */
+
+#dropbtn {
+    width: 50%;
+    padding: 25%;
+    border: none;
+    cursor: pointer;
+    position: static;
+}
+
+/* förändrar själva dropdown menyn efter knappen klickats så att de sorteras korrekt och har rätt text-styling osv */
+
+.dropdown {
+    position: absolute;
+    display: inline-block;
+    z-index: 5;
+}
+  
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    font-size: 16px;
+    width: 72px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    font-size: 16px;
+	color: black;
+    padding: 12px 12px;
+    text-decoration: none;
+    display: block;
+}
+ 
+/* ändrar bakgrundsfärgen på dropdownmenyn vid hover */
+
+.dropdown-content a:hover {background-color: #61bb75}
+  
+/* får dropdownmenyn att visas då man klickar på knappen */
+
+.show {display:block;}
+
+/*gör dropdownknappen mörkare på hover */
+
+.dropbtn:hover {
+    filter: brightness(75%);
+    transition: 250ms;
+}
+
+/* gör knappen ännu mörkare på click */
+
+.dropbtn:active {
+    filter: brightness(50%);
+    transition: 50ms;
+}
+
+/* stylar klockan så den är korrekt placerad och fint stylad */
+
+#clock {
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    margin-top: -700px;
+    font-weight: bold;
+    color: #fff;
+    -webkit-text-stroke: 1px rgb(48, 48, 51);
+    text-shadow: -1.5px 1.5px 0px #61bb75;
+}
+
+/* stylar den mörka lådan som texten placeras inuti */
+
+.columnbox {
+    background-color: #102a21;
+    width: 40%;
+    height: 100%;
+    margin-left: 4.7%;
+    position: absolute;
+    display: flex;
+    opacity: 60%;
+    z-index: -2;
+    border-left: solid 2px #e2e6cb;
+    border-right: solid 2px #e2e6cb;
+}
+
+/* stylar den ljusbeiga lådan längst till vänster */
+
+.leftbox {
+    background-color: #e2e6cb;
+    background-position-y: -200px;
+    background-position: center;
+    background-size: cover;
+    width: 4.7%;
+    height: 100%;
+    margin-left: 0px;
+    position: fixed;
+    display: flex;
+    z-index: 3;
+}
+
+/* osynlig låda vari sökfuntionen är placerad */
+
+.column2 {
+    width: 60%;
+    height: 100%;
+    margin-left: 44.7%;
+    display: flex;
+    z-index: -2;
+}
+
+/*  flyttar och stylar sökfunktionen */
+
+.searchbar {
+    background-color: #0e274f;
+    position: absolute;
+    margin-left: 55vh;
+    margin-top: 80vh;
+}
+
+/* stylar sökfunktionen då den är öppnad (genom hover) */
+
+.searchbar:hover input{
+    width: 350px;
+    background: #0b2420;
+    border-radius: 10px;
+}
+
+/* definerar hur stor sökrutan är då den öppnas */
+
+.searchbar form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+
+/* definierar styling för den icke-öppnade sökrutan */ 
+
+.searchbar input {
+    padding: 10px;
+    width: 80px;
+    height: 80px;
+    background: transparent;
+    border: 3px solid white;
+    color: white;
+    border-radius: 50px;
+    box-sizing: border-box;
+    font-size: 26px;
+    opacity: 60%;
+    color: transparent;
+    transition: .5s;
+    text-align: center;
+}
+
+/* definierar styling på texten man skriver i sökrutan */
+
+.searchbar:hover input {
+    font-size: 26px;
+    opacity: 1;
+    color: #e2e6cb;
+}
+
+.searchbar button {
+    position: absolute;
+    top: 500%;
+    right: 15px;
+    transform: translate(-50%,-50%);
+    font-size: 1px;
+    color: #502dff;
+    transition: .2s;
+    letter-spacing: 0.1em;
+}
+
+.searchbar:hover button{
+    opacity: 0;
+    z-index: -1;
+}
+
+/* animerar h1 texten */
+
+.animate__animated.animate__pulse {
+    --animate-duration: 5s; 
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>Framsida</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<script src="scripts.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+<body>
+<!-- definierar bakgrundens bildfil såväl som dess storlek för att göra sidan scrollbar -->
+    <div class="background">
+        <div class="leftbox">
+            <div class="dropdown">
+                <input id="dropbtn" type="image" onclick="myFunction()" src="http://dce.rocketausgate.com/_images/menu-icon.png" name="Dropdowninput" class="dropbtn btTxt submit" id="Dropdowninput"/>
+                <div id="myDropdown" class="dropdown-content">
+              <a href="C:\Users\axeson816\Desktop\Webbutveckling\Enskild Uppgift\loginindex.html">Login</a>
+              <a href="C:\Users\axeson816\Desktop\Webbutveckling\Enskild Uppgift\fotoalbum.html">Gallery</a>
+            </div>
+        </div>
+    </div>
+<!-- omfamnar dess child-element för att de ska placeras inom sig, vilket gör det lättare att organisera var elementen placeras -->
+<section class="main">
+    <div class="column2">
+        <div class="searchbar">
+            <form role="search" id="form">
+                <input type="search" id="query" name="q" placeholder="" aria-label="Search through site content">
+                <button>
+              </form>
+        </div class="searchbar">
+<!-- Scriptet för sökmenyn, placerad i HTML för att den helt enkelt inte fungerade i det externa scriptdokumentet -->
+        <script>
+            const f = document.getElementById('form');
+            const q = document.getElementById('query');
+            const google = 'https://www.google.com/search?q=+';
+            const site = '';
+
+            function submitted(event) {
+            event.preventDefault();
+            const url = google + q.value;
+            const win = window.open(url, '_blank');
+            win.focus();
+            }
+
+            f.addEventListener('submit', submitted);
+        </script>
+    </div>
+<!-- Skapar lådan vari texten placeras och organiserar denna -->
+<div class="columnbox"></div>
+    <div class="column1">
+        <h1 class="animate__animated animate__pulse animate__infinite infinite">Fantastiskt fin startsida</h1>
+        <h3>The unfathomably useful nature of towels</h3>
+        <p>
+            <b>
+                A towel, <i>The Hitchhiker's Guide to the Galaxy</i> says, is about the most massively useful thing an interstellar hitchhiker can have. Partly it has great practical value. You can wrap it around you for warmth as you bound across the cold moons of Jaglan Beta; you can lie on it on the brilliant marble-sanded beaches of Santraginus V, inhaling the heady sea vapors; you can sleep under it beneath the stars which shine so redly on the desert world of Kakrafoon; use it to sail a miniraft down the slow heavy River Moth; wet it for use in hand-to-hand-combat; wrap it round your head to ward off noxious fumes or avoid the gaze of the Ravenous Bugblatter Beast of Traal (such a mind-boggingly stupid animal, it assumes that if you can't see it, it can't see you); you can wave your towel in emergencies as a distress signal, and of course dry yourself off with it if it still seems to be clean enough.
+            </b>
+        </p>
+<!-- Div för att kunna styla klockan och applicera script på-->
+        <div id="clock">Klocka laddar..</div>
+    </div>
+</div>
+</section>
+</div>
+</body>
+</html>

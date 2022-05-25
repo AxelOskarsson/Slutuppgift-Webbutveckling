@@ -1,0 +1,74 @@
+body {
+    margin: 15px;
+    background-image: url(https://i.pinimg.com/564x/ab/37/25/ab3725aaf1f80243466e1692cbfadef2.jpg) ;
+}
+
+/* definerar gridsystemet för sidan */
+
+.wrapper {
+    display: grid;
+    grid-gap: 11px;
+    grid-template-columns: [col1-start] 80%  [col2-start] 21%  [col3-start] 22% [col3-end];
+    grid-template-rows: [row1-start] 180% [row2-start] 180% [row2-end];
+    color: #444;
+}
+
+/* gemensam styling för alla divar som heter box 'x' */
+
+.box {
+    background-color: #444;
+    color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    font-size: 150%;
+    transition-duration: 250ms;
+}
+  
+/* Placering och bilder för samtliga divar */
+
+.a {
+    grid-column: col1-start / col3-start;
+    grid-row: row1-start ;
+    background-image: url(https://images.unsplash.com/photo-1532879311112-62b7188d28ce?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1871);
+    background-size: cover;
+    border: #444 solid 2px;
+}
+
+.b {
+    grid-column: col3-start ;
+    grid-row: row1-start / row2-end;
+    background-image: url(https://i.pinimg.com/564x/5a/e6/8e/5ae68efb67785842a655c56703fcad36.jpg);
+    border: #444 solid 2px;
+}
+
+.c {
+    grid-column: col1-start;
+    grid-row: row2-start ;
+    background-image: url(https://i.pinimg.com/564x/cf/0e/77/cf0e7775e9ebb9bc0eadd96f77cae907.jpg);
+    background-size: cover;
+    border: #444 solid 2px;
+}
+
+.d {
+    background-image: url(https://i.pinimg.com/564x/1d/2f/e0/1d2fe0431c132cfbf9a592cd6f8e789e.jpg);
+    background-size: cover;
+    border: #444 solid 2px;
+}
+
+/* skalar ner bilder på hover, variation av nerskalning pga av varierande storlek av bilder */
+
+.a:hover {
+    transform: scale(98.5%);
+}
+
+.b:hover {
+    transform: scale(97%);
+}
+
+.c:hover {
+    transform: scale(98%);
+}
+
+.d:hover {
+    transform: scale(95%);
+}
